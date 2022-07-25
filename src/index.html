@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="#" />
+    <title>WeightCalculator</title>
+</head>
+
+<body>
+    <div class=" relative  flex flex-col justify-center w-[200px] md:w-[400px] h-[350px] md:h-[600px] bg-teal-600 rounded-2xl shadow-2xl   shadow-teal-900  mt-40 mb-20 ml-20 md:ml-[200px] lg:ml-[500px]">
+        <img src="/img/weigh-scale.png" alt="" class="absulot translate-x-24 md:translate-x-44 -translate-y-30 md:-translate-y-28 lg:-translate-y-28 px-[35px] md:px-28  md:mb-[-80px]  ">
+
+
+        <form>
+            <div class="flex flex-col">
+                <h1 class="text-white text-center md:text-3xl font-bold font-mono mb-5 "> Weight Calculator</h1>
+                <div>
+                    <label for="weight" class="block mb-2 text-center  text-sm font-bold text-gray-900 dark:text-white">(kg)weight</label>
+                    <input type="text" id="weight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-200 focus:border-yellow-200 block w-20 md:w-[200px] p-2.5 dark:bg-slate-400 dark:border-gray-600 dark:placeholderbg-gray-800 dark:text-gray-900 dark:focus:ring-yellow-300 dark:focus:border-yellow-300 ml-16 md:ml-24 "
+                        placeholder="kg" required="">
+                </div>
+                <div>
+                    <label for="height" class="block mb-2 text-center  text-sm font-bold text-gray-900 dark:text-white">(m)height</label>
+                    <input type="text" id="height" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-200 focus:border-yellow-200 block w-20 md:w-[200px] p-2.5 dark:bg-slate-400 dark:border-gray-600 dark:placeholderbg-gray-800 dark:text-gray-900 dark:focus:ring-yellow-300 dark:focus:border-yellow-300 ml-16 md:ml-24 mb-5"
+                        placeholder="kg" required="">
+                </div>
+
+                <button id="submit-btn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300  rounded-lg text-sm w-16 md:w-20 px-2 py-2.5 text-center dark:bg-violet-800 dark:hover:bg-pink-800 dark:focus:ring-rose-500 shadow-inner shadow-slate-800 translate-x-[70px] md:translate-x-[150px] font-sans delay-300">calculate</button>
+                <div id="weight-cal" class="text-white text-center md:text-xl font-bold font-mono mt-5 mb-5 delay-300"> </div>
+                <div id="result" class="text-sm text-center text-white bg-violet-800 shadow-xl shadow-gray-700  w-40 h-7 ml-28 delay-300">bmi</div>
+        </form>
+
+        <img src="/img/apple.png" alt="" class="absulot -translate-x-20 md:-translate-x-44 translate-y-[0px] md:translate-y-[70px] px-[50px] md:px-28   ">
+
+        </div>
+
+
+        <script>
+            // var weight = 67
+            // var height = 152
+            // var bmi = ((weight) / (height * height)) * 10000
+            // console.log("BMI is: " + bmi)
+            // switch (true) {
+            //     case (bmi >= 40):
+            //         console.log("Serious obesity")
+            //         break
+            //     case (bmi > 35 && bmi < 39.9):
+            //         console.log("Second degree obesity")
+            //         break
+            //     case (bmi > 30 && bmi < 34.9):
+            //         console.log("First degree obesity")
+            //         break
+            //     case (bmi > 25 && bmi < 29.9):
+            //         console.log("Overweight")
+            //         break
+            //     case (bmi > 18 && bmi < 24.9):
+            //         console.log("perfect weight")
+            //         break
+            //     case (bmi < 18):
+            //         console.log("low weight")
+            //         break
+            //     default:
+            //         console.log("done")
+            // }
+
+
+            document.getElementById("submit-btn").addEventListener("click", function() {
+                console.log("click")
+                var w = document.getElementById("weight").value
+                var h = document.getElementById("height").value
+                    // var bmi = ((w) / (h * h)) * 10000
+                var bmi = w / (h * h)
+
+
+                var weightCal = "Serious obesity"
+                switch (true) {
+                    case (bmi >= 40):
+                        // document.getElementById("weight-cal").innerHTML = "Serious obesity"
+                        weightCal = "Serious obesity"
+                        break
+                    case (bmi > 35 && bmi < 39.9):
+                        weightCal = "Second degree obesity"
+                        break
+                    case (bmi > 30 && bmi < 34.9):
+                        weightCal = "First degree obesity"
+                        break
+                    case (bmi > 25 && bmi < 29.9):
+                        weightCal = "Overweight"
+                        break
+                    case (bmi > 18 && bmi < 24.9):
+                        weightCal = "perfect weight"
+                        break
+                    case (bmi < 18):
+                        weightCal = "low weight"
+                        break
+                    default:
+                        weightCal = "done"
+                }
+                document.getElementById("result").innerHTML = `${bmi} `
+
+            })
+        </script>
+</body>
+
+</html
