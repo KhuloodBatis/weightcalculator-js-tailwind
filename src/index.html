@@ -29,7 +29,7 @@
                         placeholder="kg" required="">
                 </div>
 
-                <button id="submit-btn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300  rounded-lg text-sm w-16 md:w-20 px-2 py-2.5 text-center dark:bg-violet-800 dark:hover:bg-pink-800 dark:focus:ring-rose-500 shadow-inner shadow-slate-800 translate-x-[70px] md:translate-x-[150px] font-sans delay-300">calculate</button>
+                <button type="button" id="submit-btn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300  rounded-lg text-sm w-16 md:w-20 px-2 py-2.5 text-center dark:bg-violet-800 dark:hover:bg-pink-800 dark:focus:ring-rose-500 shadow-inner shadow-slate-800 translate-x-[70px] md:translate-x-[150px] font-sans delay-300">calculate</button>
                 <div id="weight-cal" class="text-white text-center md:text-xl font-bold font-mono mt-5 mb-5 delay-300"> </div>
                 <div id="result" class="text-sm text-center text-white bg-violet-800 shadow-xl shadow-gray-700  w-40 h-7 ml-28 delay-300">bmi</div>
         </form>
@@ -72,33 +72,33 @@
                 console.log("click")
                 var w = document.getElementById("weight").value
                 var h = document.getElementById("height").value
-                    // var bmi = ((w) / (h * h)) * 10000
-                var bmi = w / (h * h)
+                var bmi = ((w) / (h * h)) * 10000
+
 
 
                 var weightCal = "Serious obesity"
                 switch (true) {
                     case (bmi >= 40):
                         // document.getElementById("weight-cal").innerHTML = "Serious obesity"
-                        weightCal = "Serious obesity"
+                        document.getElementById("weight-cal").innerHTML = "Serious obesity"
                         break
                     case (bmi > 35 && bmi < 39.9):
-                        weightCal = "Second degree obesity"
+                        document.getElementById("weight-cal").innerHTML = "Second degree obesity"
                         break
                     case (bmi > 30 && bmi < 34.9):
-                        weightCal = "First degree obesity"
+                        document.getElementById("weight-cal").innerHTML = "First degree obesity"
                         break
                     case (bmi > 25 && bmi < 29.9):
-                        weightCal = "Overweight"
+                        document.getElementById("weight-cal").innerHTML = "Overweight"
                         break
                     case (bmi > 18 && bmi < 24.9):
-                        weightCal = "perfect weight"
+                        document.getElementById("weight-cal").innerHTML = "perfect weight"
                         break
                     case (bmi < 18):
-                        weightCal = "low weight"
+                        document.getElementById("weight-cal").innerHTML = "low weight"
                         break
                     default:
-                        weightCal = "done"
+                        document.getElementById("weight-cal").innerHTML = "done"
                 }
                 document.getElementById("result").innerHTML = `${bmi} `
 
